@@ -1,0 +1,131 @@
+.seat-grid-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.screen-indicator {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+  border-bottom: 1px dashed var(--border);
+  position: relative;
+}
+
+.seat-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.row-label {
+  width: 18px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+
+.seat-row-seats {
+  display: flex;
+  gap: 6px;
+}
+
+.seat {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px 7px 3px 3px;
+  border: none;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.15s ease;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.seat-available {
+  background: var(--seat-available);
+}
+
+.seat-available:hover:not(:disabled) {
+  background: var(--seat-available-hover);
+  transform: translateY(-2px);
+}
+
+.seat-selected {
+  background: var(--seat-selected);
+  color: #1a1306;
+  font-weight: 600;
+  transform: translateY(-2px);
+}
+
+.seat-reserved {
+  background: var(--seat-reserved);
+  color: var(--text-dim);
+  cursor: not-allowed;
+}
+
+.seat-booked {
+  background: var(--seat-booked);
+  color: var(--text-dim);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.seat:disabled {
+  cursor: not-allowed;
+}
+
+.seat-legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+@media (max-width: 640px) {
+  .seat-grid-wrap {
+    padding: 18px 12px;
+  }
+  .seat {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+}
